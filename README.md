@@ -27,6 +27,10 @@ Inicie as aplicações com o comando.
 docker compose up -d
 ```
 
+> Execute docker logs -f velsis-monitoring-monitoring-1
+
+> > Aguarde a app iniciar.
+
 > A porta 5444 precisa estar aberta no servidor ou na máquina de execução do programa
 
 > Se ao executar o compose, ocorrer erro semelhante á: permission denied while trying ...
