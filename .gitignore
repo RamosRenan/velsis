@@ -2,3 +2,4 @@
 .m2/
 .db/
 /case tecnico/rtsp-spring-demo/backend/runtime-hls/*
+/case tecnico/compose/db/
