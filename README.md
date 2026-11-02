@@ -1,4 +1,16 @@
-# No servidor que irá hospedar as aplicações utilize o docker compose.
+# Instalação e instruções.
+
+Faça o download dos artefatos:
+
+> velsis/case tecnico/compose/composetar.tar
+
+Envie o arquivo composetar.tar para o servidor.
+
+Descompacte o arquivo com o comando:
+
+```sh
+tar -xvf composetar.tar
+```
 
 #### Verifique a instalação do docker
 
