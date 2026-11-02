@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="001-insert-default-admin" author="monitoring" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <preConditions onFail="MARK_RAN" onError="HALT">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM "user" WHERE usuario = 'admin'</sqlCheck>
+        </preConditions>
+        <comment>Usuario inicial admin com senha BCrypt de admin.</comment>
+        <insert tableName="user">
+            <column name="usuario" value="admin"/>
+            <column name="senha" value="$2a$10$HigQ/oRXnqh05GnI5NGfYu9E3/gpHwi0eXp0EHbCBZ.J1RdDinAvS"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,111 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+h2 {
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+main,
+section,
+.el-col {
+  min-width: 0;
+}
+.el-row {
+  row-gap: 24px;
+}
+.el-dialog {
+  max-width: calc(100vw - 32px);
+}
+.el-descriptions__table {
+  table-layout: fixed;
+  overflow-wrap: anywhere;
+}
+.el-message-box,
+.el-notification {
+  max-width: calc(100vw - 32px);
+}
+
+@media (max-width: 767px) {
+  .el-notification {
+    top: auto !important;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    max-height: 35dvh;
+    overflow-y: auto;
+  }
+  .el-notification__closeBtn {
+    padding: 12px;
+    top: 0;
+    right: 0;
+    box-sizing: content-box;
+  }
+  #app {
+    padding: 16px;
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+  }
+  .el-button {
+    min-height: 44px;
+    height: auto;
+    padding: 10px 14px;
+    white-space: normal;
+  }
+  .el-button > span {
+    white-space: normal;
+  }
+  .el-input__inner,
+  .el-textarea__inner {
+    font-size: 16px;
+  }
+  .el-input__wrapper {
+    min-height: 44px;
+  }
+  .el-dialog {
+    width: calc(100vw - 32px);
+    margin-top: 5vh;
+  }
+  .el-pagination {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding-top: 16px;
+  }
+  .el-pagination .el-pagination__sizes {
+    display: none;
+  }
+  .el-pagination .el-pagination__total {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .el-divider--horizontal {
+    margin: 20px 0;
+  }
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+.sub-title {
+  color: rgb(69, 114, 250);
+}

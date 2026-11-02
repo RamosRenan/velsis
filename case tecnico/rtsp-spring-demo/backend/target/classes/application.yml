@@ -1,0 +1,9 @@
+server:
+  port: 8080
+stream:
+  ffmpeg: ${FFMPEG_PATH:ffmpeg}
+  rtsp-url: ${RTSP_URL:rtsp://localhost:8554/camera1}
+  gateway-rtsp-url: ${GATEWAY_RTSP_URL:rtsp://origin:8554/camera1}
+  media-api: ${MEDIA_API:http://localhost:9997}
+  media-browser-url: ${MEDIA_BROWSER_URL:http://localhost:8890}
+  directory: ${STREAM_DIRECTORY:./runtime-hls}

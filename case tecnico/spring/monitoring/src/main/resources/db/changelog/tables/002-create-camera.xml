@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="002-create-camera" author="monitoring" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="CAMERA">
+            <column name="id" type="bigint" autoIncrement="true"><constraints primaryKey="true" nullable="false" primaryKeyName="pk_camera"/></column>
+            <column name="nome" type="varchar(150)"><constraints nullable="false"/></column>
+            <column name="descricao" type="varchar(1000)"/>
+            <column name="enderecoip" type="varchar(45)"><constraints nullable="false"/></column>
+            <column name="porta_http" type="int"><constraints nullable="false"/></column>
+            <column name="porta_rtsp" type="int"><constraints nullable="false"/></column>
+            <column name="usuario" type="varchar(100)"><constraints nullable="false"/></column>
+            <column name="senha" type="varchar(255)"><constraints nullable="false"/></column>
+            <column name="status" type="boolean" defaultValueBoolean="true"><constraints nullable="false"/></column>
+        </createTable>
+        <sql>ALTER TABLE "CAMERA" ADD CONSTRAINT ck_camera_ports CHECK (porta_http BETWEEN 1 AND 65535 AND porta_rtsp BETWEEN 1 AND 65535)</sql>
+        <rollback><dropTable tableName="CAMERA"/></rollback>
+    </changeSet>
+</databaseChangeLog>

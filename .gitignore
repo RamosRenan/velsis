@@ -1,0 +1,4 @@
+/case tecnico/spring/monitoring/.m2/
+.m2/
+.db/
+/case tecnico/rtsp-spring-demo/backend/runtime-hls/*

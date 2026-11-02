@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="004-camera-unique-name" author="monitoring" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <preConditions onFail="HALT" onFailMessage="Existem cameras com nomes duplicados. Renomeie os cadastros antes de aplicar a restricao unica.">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM (SELECT nome FROM "CAMERA" GROUP BY nome HAVING COUNT(*) > 1) duplicates</sqlCheck>
+        </preConditions>
+        <addUniqueConstraint tableName="CAMERA" columnNames="nome" constraintName="uk_camera_nome"/>
+        <rollback><dropUniqueConstraint tableName="CAMERA" constraintName="uk_camera_nome"/></rollback>
+    </changeSet>
+</databaseChangeLog>
+

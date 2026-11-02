@@ -1,0 +1,7 @@
+com\example\stream\service\HlsService.class
+com\example\stream\service\StreamUnavailableException.class
+com\example\stream\web\StreamController.class
+com\example\stream\StreamApplication.class
+com\example\stream\service\WebRtcGatewayService.class
+com\example\stream\config\StreamProperties.class
+com\example\stream\config\StreamConfiguration.class

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="003-create-monitoramento-camera" author="monitoring" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="MONITORAMENTO_CAMERA">
+            <column name="id" type="bigint" autoIncrement="true"><constraints primaryKey="true" nullable="false" primaryKeyName="pk_monitoramento_camera"/></column>
+            <column name="camera_id" type="bigint"><constraints nullable="false"/></column>
+            <column name="data_hora" type="timestamp with time zone" defaultValueComputed="CURRENT_TIMESTAMP"><constraints nullable="false"/></column>
+            <column name="status" type="boolean"><constraints nullable="false"/></column>
+            <column name="tempo_ping" type="bigint"/>
+            <column name="frame" type="bytea"/>
+            <column name="msn_erro" type="text"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="MONITORAMENTO_CAMERA" baseColumnNames="camera_id"
+                                 referencedTableName="CAMERA" referencedColumnNames="id"
+                                 constraintName="fk_monitoramento_camera" onDelete="CASCADE"/>
+        <createIndex tableName="MONITORAMENTO_CAMERA" indexName="idx_monitoramento_camera_data">
+            <column name="camera_id"/><column name="data_hora"/>
+        </createIndex>
+        <sql>ALTER TABLE "MONITORAMENTO_CAMERA" ADD CONSTRAINT ck_monitoramento_ping CHECK (tempo_ping IS NULL OR tempo_ping &gt;= 0)</sql>
+        <rollback><dropTable tableName="MONITORAMENTO_CAMERA"/></rollback>
+    </changeSet>
+</databaseChangeLog>

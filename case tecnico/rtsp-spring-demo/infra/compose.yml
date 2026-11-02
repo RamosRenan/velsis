@@ -1,0 +1,11 @@
+services:
+  mediamtx:
+    image: bluenviron/mediamtx:1
+    environment:
+      MTX_API: "yes"
+      MTX_APIADDRESS: ":9997"
+      MTX_AUTHINTERNALUSERS: '[{"user": "admin", "pass": "admin", "permissions": [{"action": "publish"}, {"action": "read"}]}]'
+    ports:
+      - "127.0.0.1:8554:8554/tcp"  # O FFmpeg envia para cá
+      - "127.0.0.1:9997:9997/tcp"  # O Spring Boot controla por aqui
+      - "127.0.0.1:8888:8888/tcp"  # O navegador/Spring Boot lê o HLS por aqui
