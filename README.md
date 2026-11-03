@@ -15,6 +15,8 @@ tar -xvf composetar.tar
 # Habilite o cors
 No arquivo .env habilite os endereço de ip para o cors, apontando o ip do servidor onde as aplicações irão executar.
 
+Ex.: APP_ALLOW_CORS=http://localhost:5173,http://192.168.17.1:5173
+
 `A porta padrão é 5173`
 
 #### Verifique a instalação do docker
