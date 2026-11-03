@@ -2,6 +2,9 @@ stream:
     ffmpeg: ${FFMPEG_PATH:ffmpeg}
     directory: ${STREAM_DIRECTORY:./runtime-hls}
 
+app:
+    cors: ${APP_ALLOW_CORS}
+
 spring:
     application:
         name: monitoring
