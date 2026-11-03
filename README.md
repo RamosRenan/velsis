@@ -36,7 +36,7 @@ docker compose up -d
 
 > Execute docker logs -f velsis-monitoring-monitoring-1
 
-> > Aguarde o app iniciar.
+> > Aguarde o app iniciar. <bold>Pode levar até 2min para os postgres iniciar.</bold>
 
 > A porta 5444 precisa estar aberta no servidor ou na máquina de execução do programa.
 
