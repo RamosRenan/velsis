@@ -33,9 +33,9 @@ docker compose up -d
 
 > A porta 5444 precisa estar aberta no servidor ou na máquina de execução do programa
 
-> Se ao executar o compose, ocorrer erro semelhante á: permission denied while trying ...
 
-### Faça
+# Se ao executar o compose, ocorrer erro semelhante á: permission denied while trying ...
+#### Faça
 
 ```sh
 permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
