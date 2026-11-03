@@ -12,6 +12,10 @@ Descompacte o arquivo com o comando:
 tar -xvf composetar.tar
 ```
 
+# Habilite o cors
+No arquivo .env habilite os endereços de ip para o cors, apontando os ip's do servidor onde as aplicações irão executar.
+´A porta padrão é 5173´
+
 #### Verifique a instalação do docker
 
 ```sh
@@ -34,7 +38,7 @@ docker compose up -d
 > A porta 5444 precisa estar aberta no servidor ou na máquina de execução do programa
 
 
-# Se ao executar o compose, ocorrer erro semelhante á: permission denied while trying ...
+## Se ao executar o compose, ocorrer erro semelhante a "permission denied while trying ..."
 #### Faça
 
 ```sh
