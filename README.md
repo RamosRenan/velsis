@@ -34,9 +34,11 @@ docker compose up -d
 
 > Execute docker logs -f velsis-monitoring-monitoring-1
 
-> > Aguarde a app iniciar.
+> > Aguarde o app iniciar.
 
-> A porta 5444 precisa estar aberta no servidor ou na máquina de execução do programa
+> A porta 5444 precisa estar aberta no servidor ou na máquina de execução do programa.
+
+`Agora é só acessar a aplcaição no endereço: http://<ip.do.server>:5173/login`
 
 
 ## Se ao executar o compose, ocorrer erro semelhante a "permission denied while trying ..."
